@@ -1,0 +1,10 @@
+serial.setBaudRate(BaudRate.BaudRate9600)
+basic.forever(function () {
+    serial.writeValue("X", input.acceleration(Dimension.X))
+    serial.writeValue("Y", input.acceleration(Dimension.Y))
+    serial.writeValue("Z", input.acceleration(Dimension.Z))
+    serial.writeValue("Light", input.lightLevel())
+    serial.writeValue("Compass", input.compassHeading())
+    serial.writeValue("Temperature", input.temperature())
+    serial.writeValue("Soundlevel", input.soundLevel())
+})
